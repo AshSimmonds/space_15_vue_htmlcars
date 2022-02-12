@@ -28,6 +28,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
+          git config --global user.email "ashsimmonds@gmail.com"
+          git config --global user.name "Ash Simmonds"
           git checkout --orphan gh-pages
           # yarn add @vue/cli-service
           # yarn run build
