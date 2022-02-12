@@ -28,4 +28,5 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-          sh ./deploy.sh
+          yarn run deploy
+          # sh ./deploy.sh
