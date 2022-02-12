@@ -1,4 +1,5 @@
 const fs = require("fs");
+const {execa} = require("execa");
 (async () => {
   try {
     await execa("git", ["checkout", "--orphan", "gh-pages"]);
