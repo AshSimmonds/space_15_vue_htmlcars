@@ -28,5 +28,13 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-          yarn run deploy
+          git checkout --orphan gh-pages
+          npm run build
+          git --work-tree dist add --all
+          git --work-tree dist commit -m gh-pages
+          git push origin HEAD:gh-pages --force
+          rm -r dist
+          git checkout -f master
+          git branch -D gh-pages
+          # yarn run deploy
           # sh ./deploy.sh
