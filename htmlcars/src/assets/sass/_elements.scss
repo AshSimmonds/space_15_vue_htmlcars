@@ -1,0 +1,65 @@
+hr
+{
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 0.2rem solid #FFF;
+}
+
+@each $name, $color in $lcars-colors {
+  hr.lcars-color-#{$name} { border-bottom-color: $color; }
+  blockquote.lcars-color-#{$name} { border-color: $color; }
+  a.lcars-color-#{$name} {
+    color: $color;
+    &:hover {
+      color: lighten($color, 10%);
+    }
+  }
+}
+
+pre
+{
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: #222;
+}
+
+blockquote
+{
+  font-family: LCARSGTJ3, Helvetica, sans-serif;
+  font-size: 20pt;
+  margin: 1rem 0;
+  padding: 0.2rem 0.5rem 0 0.4rem;
+  border-style: solid;
+  border-color: #FFF;
+  border-width: 0.2rem;
+
+  &.leftline
+  {
+  	padding-top: 0.1rem;
+  	border-left-width: 0.5rem;
+  	border-top-width: 0;
+  	border-right-width: 0;
+  	border-bottom-width: 0;
+  }
+
+  &.underline
+  {
+  	padding-left: 0rem;
+  	border-left-width: 0;
+  	border-top-width: 0;
+  	border-right-width: 0;
+  }
+}
+
+dl dt
+{
+  font-family: LCARSGTJ3, Helvetica, sans-serif;
+  font-size: 16pt;
+}
+
+table {
+  width: 100%;
+  box-sizing: border-box;
+}

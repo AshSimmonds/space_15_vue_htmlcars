@@ -1,0 +1,222 @@
+.lcars-field
+{
+  @extend .lcars-bg-ho;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+:root
+{
+  @include lcars-chrome-def($lcars-chrome-bg, $lcars-chrome-fg);
+  @include lcars-chrome-def-alert($lcars-chrome-bg-alert, $lcars-chrome-fg-alert);
+  @include lcars-screen-def($lcars-screen-bg, $lcars-screen-fg);
+  @include lcars-basic-font-def($lcars-basic-font);
+  @include lcars-title-font-def($lcars-title-font);
+}
+
+.alert
+{
+  --lcars-chrome-bg: var(--lcars-chrome-bg-alert) !important;
+  --lcars-chrome-fg: var(--lcars-chrome-fg-alert) !important;
+}
+
+@each $name, $color in $lcars-colors {
+  .lcars-chrome-#{$name} {
+    --lcars-chrome-bg: #{$color};
+    --lcars-chrome-bg-light: #{lighten($color, 10%)};
+  }
+}
+
+.lcars-round-right
+{
+  border-top-right-radius: var(--lcars-chrome-height);
+  border-bottom-right-radius: var(--lcars-chrome-height);
+}
+
+.lcars-round-left
+{
+  border-top-left-radius: var(--lcars-chrome-height);
+  border-bottom-left-radius: var(--lcars-chrome-height);
+}
+
+.lcars-round
+{
+  border-radius: var(--lcars-chrome-height);
+}
+
+%lcars-chrome-cap-base
+{
+  width: var(--lcars-chrome-height);
+  height: var(--lcars-chrome-height);
+  background-color: var(--lcars-chrome-bg);
+  @extend %lcars-chrome-component;
+}
+
+.lcars-chrome-cap-right
+{
+  @extend %lcars-chrome-cap-base;
+  @extend .lcars-round-right;
+}
+
+.lcars-chrome-cap-left
+{
+  @extend %lcars-chrome-cap-base;
+  @extend .lcars-round-right;
+}
+
+%lcars-chrome-component
+{
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+.lcars-chrome-set
+{
+  background-color: var(--lcars-chrome-bg);
+  color: var(--lcars-chrome-fg);
+}
+
+.lcars-chrome-base
+{
+  display: flex;
+
+  :not(:first-child) {
+    border-left: $lcars-basic-border;
+  }
+
+  h1, h2, h3, h4, h5, h6
+  {
+    @extend .lcars-chrome-component;
+    @extend %lcars-chrome-heading;
+    @extend %lcars-chrome-heading-reset;
+    /*padding: 0 0.1em;*/
+  }
+
+  .lcars-chrome-component {
+    @extend %lcars-chrome-component;
+  }
+
+  .lcars-bar-space
+  {
+    display: inline-block;
+    flex: 1 0 auto;
+  }
+
+  .lcars-btn
+  {
+  	@extend %lcars-chrome-component;
+  }
+
+  .lcars-fill
+  {
+    flex: 1 0 auto;
+  }
+}
+
+.lcars-chrome
+{
+  @extend .lcars-chrome-base;
+  background-color: var(--lcars-chrome-bg);
+  border-radius: 2em;
+}
+
+.lcars-chrome-horizontal
+{
+  @extend .lcars-chrome;
+  padding: 0 2rem;
+  max-height: var(--lcars-chrome-height);
+  height:     var(--lcars-chrome-height);
+  min-height: var(--lcars-chrome-height);
+  flex-direction: row;
+
+  &.alt-cap-right
+  {
+    border-right: 2.5em solid map-get($lcars-colors, or);
+    padding-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &.alt-cap-left
+  {
+    border-left: 2.5em solid map-get($lcars-colors, or);
+    padding-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .lcars-bar-space.inlay-up
+  {
+    border-bottom: 0.5rem solid var(--lcars-screen-bg);
+  }
+
+  .lcars-bar-space.inlay-down
+  {
+    border-top: 0.5rem solid var(--lcars-screen-bg);
+  }
+}
+
+.lcars-chrome-vertical
+{
+  @extend .lcars-chrome;
+  padding: 2em 0;
+  /*width:     var(--lcars-chrome-height);*/
+  min-width: var(--lcars-chrome-height);
+  flex-direction: column;
+
+  :not(:first-child)
+  {
+    border-top: $lcars-basic-border;
+    border-left: 0;
+  }
+
+  .lcars-chrome-component
+  {
+    text-align: right;
+  }
+}
+
+@mixin lcars-chrome-size($height, $caption-size, $offset, $btn-padding, $btn-size)
+{
+  #{"--lcars-chrome-height"}: $height;
+  #{"--lcars-chrome-caption-size"}: $caption-size;
+  #{"--lcars-chrome-offset"}: $offset;
+  #{"--lcars-chrome-btn-padding"}: $btn-padding;
+  #{"--lcars-chrome-btn-size"}: $btn-size;
+}
+
+.lcars-chrome-small   { @include lcars-chrome-size(1rem,   130%, -0.12rem, 0     0.2rem,        90%);  }
+.lcars-chrome-smaller { @include lcars-chrome-size(1.5rem, 185%, -0.12rem, 0     0.3rem,        100%);  }
+.lcars-chrome-normal  { @include lcars-chrome-size(2rem,   260%, -0.25rem, 0.3em 0.6em 0 0.6em, 16pt); }
+.lcars-chrome-larger  { @include lcars-chrome-size(2.5rem, 330%, -0.3rem,  0.6rem,              16pt); }
+.lcars-chrome-large   { @include lcars-chrome-size(3rem,   400%, -0.4rem,  1.2rem 0.6rem,       16pt); }
+
+:root
+{
+  @extend .lcars-chrome-normal;
+}
+
+.lcars-chrome-field
+{
+  @extend .lcars-font;
+  padding: 0 0.3rem;
+  color: #000;
+}
+
+.text-bottom-left, .text-top-left
+{
+  text-align: left;
+}
+
+.text-top-right, .text-bottom-right
+{
+  text-align: right;
+}
+
+.text-bottom-right::before, .text-bottom-left::before
+{
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: bottom;
+}

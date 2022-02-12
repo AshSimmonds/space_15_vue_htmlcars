@@ -1,0 +1,152 @@
+$lcars-themes: (
+  voyager: (
+    title: map-get($lcars-voyager-colors, orange),
+    color: #000000,
+    link: #ff0000,
+
+    primary: map-get($lcars-voyager-colors, light-orange),
+    primary-alt-1: map-get($lcars-voyager-colors, light-blue),
+    primary-alt-2: map-get($lcars-voyager-colors, blue-gray),
+    primary-alt-3: map-get($lcars-voyager-colors, lilac),
+
+    secondary: map-get($lcars-voyager-colors, russet),
+    secondary-alt-1: map-get($lcars-voyager-colors, apricot),
+    secondary-alt-2: map-get($lcars-voyager-colors, pink),
+    secondary-alt-3: map-get($lcars-voyager-colors, beige)
+  ),
+  uss-na: (
+    title: #ffffff,
+    color: #000000,
+    link: map-get($lcars-palette, pure-blue),
+
+    primary: map-get($lcars-uss-na-colors, blue-4),
+    primary-alt-1: map-get($lcars-uss-na-colors, blue-1),
+    primary-alt-2: map-get($lcars-uss-na-colors, blue-2),
+    primary-alt-3: map-get($lcars-uss-na-colors, blue-3),
+
+    secondary: map-get($lcars-uss-na-colors, green-4),
+    secondary-alt-1: map-get($lcars-uss-na-colors, green-1),
+    secondary-alt-2: map-get($lcars-uss-na-colors, green-2),
+    secondary-alt-3: map-get($lcars-uss-na-colors, green-3)
+  ),
+  year-2357: (
+    title: #fff,
+    color: #000,
+    link: #fff,
+
+    primary:       map-get($year-2357-colors, a),
+    primary-alt-1: map-get($year-2357-colors, b),
+    primary-alt-2: map-get($year-2357-colors, c),
+    primary-alt-3: map-get($year-2357-colors, e),
+
+    secondary:       map-get($year-2357-colors, d),
+    secondary-alt-1: map-get($year-2357-colors, f),
+    secondary-alt-2: map-get($year-2357-colors, g),
+    secondary-alt-3: map-get($year-2357-colors, h)
+  ),
+  year-2369: (
+    title: #fff,
+    color: #000,
+    link: #fff,
+
+    primary:       map-get($year-2369-colors, h),
+    primary-alt-1: map-get($year-2369-colors, f),
+    primary-alt-2: map-get($year-2369-colors, g),
+    primary-alt-3: map-get($year-2369-colors, e),
+
+    secondary:       map-get($year-2369-colors, a),
+    secondary-alt-1: map-get($year-2369-colors, b),
+    secondary-alt-2: map-get($year-2369-colors, c),
+    secondary-alt-3: map-get($year-2369-colors, d)
+  ),
+  year-2375: (
+    title: #fff,
+    color: #000,
+    link: #fff,
+
+    primary:       map-get($year-2375-colors, a),
+    primary-alt-1: map-get($year-2375-colors, b),
+    primary-alt-2: map-get($year-2375-colors, c),
+    primary-alt-3: map-get($year-2375-colors, d),
+
+    secondary:       map-get($year-2375-colors, e),
+    secondary-alt-1: map-get($year-2375-colors, f),
+    secondary-alt-2: map-get($year-2375-colors, g),
+    secondary-alt-3: map-get($year-2375-colors, h)
+  ),
+  year-2379: (
+    title: #fff,
+    color: #000,
+    link: #fff,
+
+    primary:       map-get($year-2379-colors, a),
+    primary-alt-1: map-get($year-2379-colors, b),
+    primary-alt-2: map-get($year-2379-colors, c),
+    primary-alt-3: map-get($year-2379-colors, d),
+
+    secondary:       map-get($year-2379-colors, e),
+    secondary-alt-1: map-get($year-2379-colors, f),
+    secondary-alt-2: map-get($year-2379-colors, g),
+    secondary-alt-3: map-get($year-2379-colors, h)
+  ),
+  crt-green: (
+    title:            map-get($lcars-palette, monochrome-green-1),
+    color:            map-get($lcars-palette, monochrome-black),
+    link:             map-get($lcars-palette, monochrome-green-1),
+
+    primary:          map-get($lcars-palette, monochrome-green-1),
+    primary-alt-1:    map-get($lcars-palette, monochrome-green-1),
+    primary-alt-2:    map-get($lcars-palette, monochrome-green-1),
+    primary-alt-3:    map-get($lcars-palette, monochrome-green-1),
+
+    secondary:        map-get($lcars-palette, monochrome-green-1),
+    secondary-alt-1:  map-get($lcars-palette, monochrome-green-1),
+    secondary-alt-2:  map-get($lcars-palette, monochrome-green-1),
+    secondary-alt-3:  map-get($lcars-palette, monochrome-green-1),
+  ),
+  crt-amber: (
+    title:            map-get($lcars-palette, amber),
+    color:            map-get($lcars-palette, monochrome-black),
+    link:             map-get($lcars-palette, amber),
+
+    primary:          map-get($lcars-palette, amber),
+    primary-alt-1:    map-get($lcars-palette, amber),
+    primary-alt-2:    map-get($lcars-palette, amber),
+    primary-alt-3:    map-get($lcars-palette, amber),
+
+    secondary:        map-get($lcars-palette, amber),
+    secondary-alt-1:  map-get($lcars-palette, amber),
+    secondary-alt-2:  map-get($lcars-palette, amber),
+    secondary-alt-3:  map-get($lcars-palette, amber),
+  ),
+  red-alert: (
+    title: #ffffff,
+    color: #000000,
+    link: #ff0000,
+
+    primary: map-get($lcars-uss-na-alert-colors, blue-4),
+    primary-alt-1: map-get($lcars-uss-na-alert-colors, blue-1),
+    primary-alt-2: map-get($lcars-uss-na-alert-colors, blue-2),
+    primary-alt-3: map-get($lcars-uss-na-alert-colors, blue-3),
+
+    secondary: map-get($lcars-uss-na-alert-colors, green-4),
+    secondary-alt-1: map-get($lcars-uss-na-alert-colors, green-1),
+    secondary-alt-2: map-get($lcars-uss-na-alert-colors, green-2),
+    secondary-alt-3: map-get($lcars-uss-na-alert-colors, green-3)
+  ),
+  default: (
+    title: #ffffff,
+    color: #000000,
+    link: #eeeeee,
+
+    primary: #999999,
+    primary-alt-1: #aaaaaa,
+    primary-alt-2: #bbbbbb,
+    primary-alt-3: #cccccc,
+
+    secondary: #555555,
+    secondary-alt-1: #666666,
+    secondary-alt-2: #777777,
+    secondary-alt-3: #888888
+  )
+);

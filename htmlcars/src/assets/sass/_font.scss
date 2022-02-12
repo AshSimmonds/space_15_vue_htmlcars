@@ -1,0 +1,65 @@
+.lcars-font
+{
+  font-family: LCARSGTJ3, Helvetica, sans-serif;
+  font-size: 12pt;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+  border-bottom: 1px dotted #eee;
+  font-family: LCARSGTJ3, Helvetica, sans-serif;
+}
+
+p, ul, ol
+{
+  text-align: justify;
+
+  a
+  {
+    text-decoration: none;
+    color: var(--lcars-theme-link);
+    font-weight: bold;
+
+    &::before
+    {
+      content: "["; //"\2022"
+    }
+
+    &::after
+    {
+      content: "]"; //"\2022"
+    }
+
+    &:hover
+    {
+      text-decoration: underline;
+    }
+  }
+}
+
+.lcars-message
+{
+  text-align: center;
+
+  %message-heading
+  {
+    border-bottom: none;
+    margin-bottom: 0;
+    line-height: 0.9em;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  h1 { @extend %message-heading; font-size: 1500%; }
+  h2 { @extend %message-heading; font-size: 1000%; }
+  h3 { @extend %message-heading; font-size: 750%; }
+  h4 { @extend %message-heading; font-size: 500%; }
+  h5 { @extend %message-heading; font-size: 400%; }
+  h6 { @extend %message-heading; font-size: 250%; }
+}
+
+.lcars-img-header
+{
+  border-bottom: none;
+  color: map-get($lcars-colors, or);
+}

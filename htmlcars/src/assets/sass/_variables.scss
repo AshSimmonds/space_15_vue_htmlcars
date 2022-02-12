@@ -1,0 +1,27 @@
+// Import color definitions
+@import 'colordef';
+@import 'colorpalettes';
+@import 'colorref';
+
+// Global color definitions
+$lcars-screen-bg: #000 !default;
+$lcars-screen-fg: #fff !default;
+
+// Global chrome definitions
+$lcars-chrome-bg: map-get($lcars-sdk-colors, chrome-bg);
+$lcars-chrome-fg: map-get($lcars-sdk-colors, chrome-fg);
+$lcars-chrome-bg-alert: #900;
+$lcars-chrome-fg-alert: #fff;
+
+// Global font definitions
+$lcars-title-font: LCARSGTJ3, Helvetica, sans-serif;
+$lcars-basic-font: Helvetica, sans-serif;
+
+// Global size definitions
+$lcars-gap: 0.3rem;
+$lcars-border-width: $lcars-gap;
+$lcars-edge-width: 0.4rem;
+$lcars-basic-border: $lcars-gap solid var(--lcars-screen-bg);
+$lcars-edge-border: $lcars-edge-width solid var(--lcars-screen-bg);
+$lcars-border-radius: 1rem;
+$lcars-body-padding: 1rem;

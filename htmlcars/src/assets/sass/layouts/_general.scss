@@ -1,0 +1,31 @@
+.lcars-sidebar   { grid-area: sidebar; }
+.lcars-topbar    { grid-area: topbar; }
+.lcars-bottombar { grid-area: bottombar; }
+.lcars-content   { grid-area: content; }
+.lcars-altbar    { grid-area: altbar; }
+
+.lcars-grid-content { grid-area: content-begin / content-begin / content-end / content-end; }
+
+.lcars-scrollable
+{
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.lcars-topbar, .lcars-bottombar
+{
+  & > *
+  {
+    &:not(.p-absolute):first-child, &.lcars-chrome-first { border-left: 0.3rem solid var(--lcars-screen-bg); }
+    &:not(.p-absolute):last-child, &.lcars-chrome-last { border-right: 0.3rem solid var(--lcars-screen-bg); }
+  }
+}
+
+.lcars-sidebar, .lcars-altbar
+{
+  & > *
+  {
+    &:not(.p-absolute):first-child, &.lcars-chrome-first { border-top: 0.3rem solid var(--lcars-screen-bg); }
+    &:not(.p-absolute):last-child, &.lcars-chrome-last { border-bottom: 0.3rem solid var(--lcars-screen-bg); }
+  }
+}

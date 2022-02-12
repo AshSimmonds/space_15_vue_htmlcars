@@ -1,0 +1,68 @@
+// Produce classes for all colors
+@each $name, $color in $lcars-colors {
+  .lcars-bg-#{$name} { background-color: $color; }
+  .lcars-fg-#{$name} { color: $color; }
+}
+
+@each $name, $color in $lcars-alert-colors {
+  .alert .lcars-bg-#{$name} { background-color: $color; }
+  .alert .lcars-fg-#{$name} { color: $color; }
+}
+
+// Produce classes for the default colors
+$lcars-def-keys: (
+  chrome-bg: $lcars-chrome-bg,
+  chrome-fg: $lcars-chrome-fg,
+  screen-bg: $lcars-screen-bg,
+  screen-fg: $lcars-screen-fg
+);
+
+@each $key, $color in $lcars-def-keys {
+  .lcars-bg-default-#{$key} { background-color: $color; }
+  .lcars-fg-default-#{$key} { color: $color; }
+}
+
+// Produce classes for themes
+@each $name, $theme in $lcars-themes {
+  .lcars-chrome-#{$name} {
+    @include lcars-chrome-def(
+      map-get($theme, primary),
+      map-get($theme, color))
+    @include lcars-chrome-def-light(
+      lighten(map-get($theme, primary), 10%),
+      map-get($theme, color))
+    @each $key, $color in $theme {
+      --lcars-theme-#{$key}: #{$color};
+      --lcars-theme-#{$key}-light: #{lighten($color, 10%)};
+    }
+  }
+}
+
+$lcars-theme-keys: (
+  "color", "title", "link",
+  "primary", "primary-alt-1", "primary-alt-2", "primary-alt-3",
+  "secondary", "secondary-alt-1", "secondary-alt-2", "secondary-alt-3"
+);
+
+@each $key in $lcars-theme-keys {
+  .lcars-bg-theme-#{$key} {
+    background-color: var(--lcars-theme-#{$key});
+  }
+
+  .lcars-fg-theme-#{$key} {
+    color: var(--lcars-theme-#{$key});
+  }
+
+  .lcars-chrome-#{$key} {
+    @include lcars-chrome-def(var(--lcars-theme-#{$key}), var(--lcars-theme-color))
+    @include lcars-chrome-def-light(var(--lcars-theme-#{$key}-light), var(--lcars-theme-color))
+  }
+}
+
+:root
+{
+  @extend .lcars-chrome-default;
+  @each $name, $color in $lcars-palette {
+    --lcars-color-#{$name}: #{$color};
+  }
+}
