@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/space_15_vue_htmlcars/precache-manifest.9fb4acca4815c948674e515f1f4eb392.js"
+  "/space_15_vue_htmlcars/precache-manifest.9752db580370c4cc7fa40350a297fb5b.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "vue-htmlcars-template"});
